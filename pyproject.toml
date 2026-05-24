@@ -65,7 +65,7 @@ Repository = "https://github.com/your-org/swarms"
 Issues = "https://github.com/your-org/swarms/issues"
 
 [tool.setuptools.packages.find]
-where = ["."] 
+where = ["."]
 include = ["swarms*"]
 
 [tool.ruff]
@@ -88,7 +88,8 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-addopts = "--cov=swarms --cov-report=term-missing --cov-report=xml"
+# Removed --cov-report=xml locally since I don't use CI coverage uploads
+addopts = "--cov=swarms --cov-report=term-missing"
 
 [tool.coverage.run]
 source = ["swarms"]

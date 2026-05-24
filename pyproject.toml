@@ -90,7 +90,9 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 # Removed --cov-report=xml locally since I don't use CI coverage uploads
 # Using -p no:warnings to keep test output clean while exploring the codebase
-addopts = "--cov=swarms --cov-report=term-missing -p no:warnings"
+# Dropped --cov=swarms for now — coverage slows down quick local test runs;
+# run `pytest --cov=swarms --cov-report=term-missing` manually when needed.
+addopts = "-p no:warnings"
 
 [tool.coverage.run]
 source = ["swarms"]

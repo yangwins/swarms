@@ -92,7 +92,8 @@ asyncio_mode = "auto"
 # Using -p no:warnings to keep test output clean while exploring the codebase
 # Dropped --cov=swarms for now — coverage slows down quick local test runs;
 # run `pytest --cov=swarms --cov-report=term-missing` manually when needed.
-addopts = "-p no:warnings"
+# Added -x so pytest stops on the first failure — saves time during active dev.
+addopts = "-p no:warnings -x"
 
 [tool.coverage.run]
 source = ["swarms"]
